@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -7,25 +8,33 @@
 </head>
 <body>
 
-  <div class="menu-container">
-    <a href="jogadores/create.php">
-      <button class="botaoMenu">
-        <h4>Jogadores</h4>
-      </button>
-    </a>
+  <header>
+    <h1>⚽ Sistema de Gestão Esportiva</h1>
+    <p>Escolha uma opção abaixo para gerenciar</p>
+  </header>
 
-    <a href="partidas/create.php">
-      <button class="botaoMenu">
-        <h4>Partidas</h4>
-      </button>
-    </a>
+  <main>
+    <div class="menu-container">
+      <a href="jogadores/create.php">
+        <button class="botaoMenu">
+          <h4>Jogadores</h4>
+        </button>
+      </a>
 
-    <a href="times/create.php">
-      <button class="botaoMenu">
-        <h4>Times</h4>
-      </button>
-    </a>
-  </div>
+      <a href="partidas/create.php">
+        <button class="botaoMenu">
+          <h4>Partidas</h4>
+        </button>
+      </a>
+
+      <a href="times/create.php">
+        <button class="botaoMenu">
+          <h4>Times</h4>
+        </button>
+      </a>
+    </div>
+  </main>
 
 </body>
 </html>
+
