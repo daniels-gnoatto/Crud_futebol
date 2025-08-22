@@ -24,33 +24,57 @@ $times = ['1'=>'Palmeiras','2'=>'Flamengo','3'=>'Santos','4'=>'Corinthians','5'=
 $posicoes = ['Goleiro','Zagueiro','Lateral-direito','Lateral-esquerdo','Volante','Meia','Atacante'];
 ?>
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Jogadores</title>
+
+</head>
+<body>
+
+<h1>Lista de Jogadores</h1>
+
 <form method="get">
-    Nome: <input type="text" name="nome" value="<?= $nome ?>">
+    Nome: <input type="text" name="nome" value="<?= htmlspecialchars($nome) ?>">
     Posição: 
     <select name="posicao">
         <option value="">Todos</option>
-        <?php foreach($posicoes as $p) echo "<option ".($posicao==$p?'selected':'').">$p</option>"; ?>
+        <?php foreach($posicoes as $p): ?>
+            <option value="<?= $p ?>" <?= ($posicao==$p)?'selected':'' ?>><?= $p ?></option>
+        <?php endforeach; ?>
     </select>
     Time:
     <select name="time_id">
         <option value="">Todos</option>
-        <?php foreach($times as $id=>$nome_time) echo "<option value='$id' ".($time_id==$id?'selected':'').">$nome_time</option>"; ?>
+        <?php foreach($times as $id=>$nome_time): ?>
+            <option value="<?= $id ?>" <?= ($time_id==$id)?'selected':'' ?>><?= $nome_time ?></option>
+        <?php endforeach; ?>
     </select>
     <button type="submit">Filtrar</button>
 </form>
 
-<table border="1">
-<tr><th>Nome</th><th>Posição</th><th>Camisa</th><th>Time</th><th>Ações</th></tr>
-<?php while($row = $result->fetch_assoc()): ?>
-<tr>
-    <td><?= $row['nome'] ?></td>
-    <td><?= $row['posicao'] ?></td>
-    <td><?= $row['numero_camisa'] ?></td>
-    <td><?= $times[$row['time_id']] ?></td>
-    <td>
-        <a href="edit.php?id=<?= $row['id'] ?>">Editar</a> | 
-        <a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
-    </td>
-</tr>
-<?php endwhile; ?>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Posição</th>
+        <th>Camisa</th>
+        <th>Time</th>
+        <th>Ações</th>
+    </tr>
+    <?php while($row = $result->fetch_assoc()): ?>
+    <tr>
+        <td><?= htmlspecialchars($row['nome']) ?></td>
+        <td><?= htmlspecialchars($row['posicao']) ?></td>
+        <td><?= $row['numero_camisa'] ?></td>
+        <td><?= $times[$row['time_id']] ?></td>
+        <td>
+            <a href="edit.php?id=<?= $row['id'] ?>">Editar</a> | 
+            <a href="delete.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+        </td>
+    </tr>
+    <?php endwhile; ?>
 </table>
+
+</body>
+</html>
