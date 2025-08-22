@@ -1,12 +1,11 @@
 <?php
 $host = "localhost";
-$usuario = "root";   // padrão do XAMPP
-$senha = "";       // geralmente sem senha no XAMPP
+$user = "root"; 
+$pass = "root";    
 $db   = "futebol_db";
 
-$conn = new mysqli($host, $$usuario, $senha, $db);
-
+$conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
+    die("Conexão falhou: " . $conn->connect_error);
 }
 ?>

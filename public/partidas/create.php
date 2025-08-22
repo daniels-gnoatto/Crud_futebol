@@ -1,6 +1,6 @@
 <?php
 
-include 'db.php';
+include '../../config/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
