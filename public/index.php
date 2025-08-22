@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <a href="/jogadores/create.php">
+    <a href="jogadores/create.php">
              <button class="botaoMenu">
             <div>
                 <h4>Jogadores</h4>
@@ -15,7 +15,7 @@
         </button>
     </a>
 
-    <a href="/partidas/create.php">
+    <a href="partidas/create.php">
              <button class="botaoMenu">
             <div>
                 <h4>Partidas</h4>
@@ -23,7 +23,7 @@
         </button>
     </a>
 
-    <a href="/times/create.php">
+    <a href="times/create.php">
              <button class="botaoMenu">
             <div>
                 <h4>Times</h4>
