@@ -1,5 +1,5 @@
 <?php 
-include '../../config/conexao.php'
+include '../../config/conexao.php';
 
 $id = $_GET['id'];
 $dados = $conn->query("SELECT * FROM times WHERE id=$id")->fetch_assoc();

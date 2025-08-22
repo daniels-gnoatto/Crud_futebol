@@ -69,7 +69,7 @@ $result = $stmt->get_result();
 <div class="container mt-4">
     <div class="d-flex justify-content-between mb-3">
         <h2>Times</h2>
-        <a class="btn btn-success" href="create.php">➕ Cadastrar Time</a>
+        <a class="btn btn-success" href="create.php"><H2>⚽CADASTRAR TIME⚽</H2></a>
     </div>
 
     <form method="GET" class="row g-3 mb-3">
