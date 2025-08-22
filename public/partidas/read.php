@@ -27,6 +27,8 @@ if ($result->num_rows > 0) {
                 <td> {$row['data_jogo']} </td>
                 <td> {$row['gols_casa']} </td>
                 <td> {$row['gols_fora']} </td>
+                <td> {$row['Ações']} </td>
+
                 <td> 
                     <a href='update.php?id={$row['id']}'>Editar<a>
                     <a href='delete.php?id={$row['id']}'>Excluir<a>
